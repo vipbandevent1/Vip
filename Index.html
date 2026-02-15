@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VIP BAND | Wedding & Event Band</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Corner Design -->
+  <div class="corner-shape"></div>
+  
+  <!-- Header -->
+  <header>
+    <div class="logo">VIP BAND</div>
+    <div class="menu-icon" onclick="openMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- Popup Menu -->
+  <div class="menu-overlay" id="menu">
+    <div class="menu-box">
+      <span class="close-btn" onclick="closeMenu()">✕</span>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#gallery" onclick="closeMenu()">Gallery</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-image">
+        <img src="main.jpg" alt="VIP BAND Performance">
+      </div>
+      <div class="button-group">
+        <a href="tel:+919005557713" class="btn"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <button class="btn btn-secondary" onclick="openBookingPage()"><i class="fa-solid fa-calendar-days"></i> Your Booking</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2><i class="fa-solid fa-music"></i> About Us</h2>
+    <p>VIP BAND is a trusted wedding & event band that has been providing wedding and baraat services in Kanpur for over <strong>25+ years</strong>. We focus on classy and royal presentations.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section light">
+    <h2><i class="fa-solid fa-star"></i> Our Services</h2>
+    <div class="cards">
+      <div class="card" onclick="openServicePage('dhol')"><i class="fa-solid fa-drum"></i><br>Dhol</div>
+      <div class="card" onclick="openServicePage('band')"><i class="fa-solid fa-music"></i><br>Brass Band</div>
+      <div class="card" onclick="openServicePage('co2jambo')"><i class="fa-solid fa-cube"></i><br>CO2 Jambo</div>
+      <div class="card" onclick="openServicePage('baraat')"><i class="fa-solid fa-truck"></i><br>Baraat On Wheel</div>
+      <div class="card" onclick="openServicePage('coldfire')"><i class="fa-solid fa-fire"></i><br>Cold Fire</div>
+      <div class="card" onclick="openServicePage('co2gun')"><i class="fa-solid fa-gun"></i><br>CO2 Gun</div>
+      <div class="card" onclick="openServicePage('vintage')"><i class="fa-solid fa-car-side"></i><br>Vintage Car</div>
+      <div class="card" onclick="openServicePage('rath')"><i class="fa-solid fa-flag"></i><br>Rath</div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section">
+    <h2><i class="fa-solid fa-image"></i> Gallery</h2>
+    <div class="gallery">
+      <img src="Gallery1.jpg" alt="Wedding Band">
+      <img src="Gallery2.jpg" alt="Wedding Celebration">
+      <img src="Gallery-bharat.jpg" alt="Baraat">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section light">
+    <h2><i class="fa-solid fa-phone"></i> Contact</h2>
+    <p><i class="fa-solid fa-location-dot"></i> Govind Nagar, Kanpur, Uttar Pradesh</p>
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+919005557713">+91 9005557713</a></p>
+    <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/919005557713" target="_blank">WhatsApp</a></p>
+    <p><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/vip_band_event" target="_blank">@vip_band_event</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>© 2026 VIP BAND | All Rights Reserved</footer>
+
+  <!-- ===== SERVICE PAGES ===== -->
+  <div id="service-pages">
+    <!-- Dhol Page -->
+    <div id="dhol-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>DHOL</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="Dhol.jpg" alt="Dhol">
+              <img src="preview1.jpg" alt="Dhol Preview">
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>Dhol</h3>
+          <p>Traditional Indian dhol instruments for your wedding procession.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹1000 per day</p>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('dhol', -1)">-</button>
+              <input type="number" id="dhol-qty" value="1" min="1" max="15" readonly>
+              <button onclick="updateQuantity('dhol', 1)">+</button>
+              <span class="max-note">(Max: 15)</span>
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('dhol', 'Dhol', 1000, document.getElementById('dhol-qty').value)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brass Band Page -->
+    <div id="band-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>BRASS BAND</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="brass-band.jpg" alt="Brass Band">
+              <img src="preview2.jpg" alt="Brass Band Preview">
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>Brass Band</h3>
+          <p>Complete brass band with singers and musicians for all ceremonies.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹25,000 per day</p>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('band', -1)">-</button>
+              <input type="number" id="band-qty" value="1" min="1" max="15" readonly>
+              <button onclick="updateQuantity('band', 1)">+</button>
+              <span class="max-note">(Max: 15)</span>
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('band', 'Brass Band', 25000, document.getElementById('band-qty').value)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CO2 Jambo Page -->
+    <div id="co2jambo-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>CO2 JAMBO</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="co2.jpg" alt="CO2 Jambo">
+              <img src="preview3.jpg" alt="CO2 Jambo Preview">
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>CO2 Jambo</h3>
+          <p>Powerful CO2 Jambo effect for your events.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹8,000 per day</p>
+            <div class="quantity-control single-unit">
+              <span class="single-note">(Single unit only)</span>
+              <input type="hidden" id="co2jambo-qty" value="1">
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('co2jambo', 'CO2 Jambo', 8000, 1)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baraat On Wheel Page - SINGLE IMAGE (Preview hata di) -->
+    <div id="baraat-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>BARAAT ON WHEEL</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images single-image">
+              <img src="Bharat-wheel.jpg" alt="Baraat On Wheel">
+            </div>
+            <div class="carousel-dots" style="display: none;"></div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>Baraat On Wheel</h3>
+          <p>Special decorated vehicle with music system for baraat procession.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹40,000 per day</p>
+            <div class="quantity-control single-unit">
+              <span class="single-note">(Single unit only)</span>
+              <input type="hidden" id="baraat-qty" value="1">
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('baraat', 'Baraat On Wheel', 40000, 1)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cold Fire Page -->
+    <div id="coldfire-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>COLD FIRE</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="fire.jpg" alt="Cold Fire">
+              <img src="preview5.jpg" alt="Cold Fire Preview">
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>Cold Fire</h3>
+          <p>Spectacular cold fire effect for stage and events.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹1,000 per day</p>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('coldfire', -1)">-</button>
+              <input type="number" id="coldfire-qty" value="1" min="1" max="8" readonly>
+              <button onclick="updateQuantity('coldfire', 1)">+</button>
+              <span class="max-note">(Max: 8)</span>
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('coldfire', 'Cold Fire', 1000, document.getElementById('coldfire-qty').value)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CO2 Gun Page -->
+    <div id="co2gun-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>CO2 GUN</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images">
+              <img src="co2gun.jpg" alt="CO2 Gun">
+              <img src="preview6.jpg" alt="CO2 Gun Preview">
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>CO2 Gun</h3>
+          <p>High-pressure CO2 gun effect for dramatic moments.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹8,000 per day</p>
+            <div class="quantity-control single-unit">
+              <span class="single-note">(Single unit only)</span>
+              <input type="hidden" id="co2gun-qty" value="1">
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('co2gun', 'CO2 Gun', 8000, 1)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vintage Car Page - SINGLE IMAGE -->
+    <div id="vintage-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>VINTAGE CAR</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel">
+            <div class="carousel-images single-image">
+              <img src="vintage.jpg" alt="Vintage Car">
+            </div>
+            <div class="carousel-dots" style="display: none;"></div>
+          </div>
+        </div>
+        <div class="service-details">
+          <h3>Vintage Car</h3>
+          <p>Royal vintage car for baraat and wedding procession. Make your entry grand and memorable.</p>
+          <div class="price-section">
+            <p class="price">Price: ₹20,000 per day</p>
+            <div class="quantity-control single-unit">
+              <span class="single-note">(Single unit only)</span>
+              <input type="hidden" id="vintage-qty" value="1">
+            </div>
+            <button class="btn-add-to-cart" onclick="addToCart('vintage', 'Vintage Car', 20000, 1)"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rath Page - 2 IMAGES WITH DIFFERENT PRICES -->
+    <div id="rath-page" class="service-page">
+      <div class="service-page-header">
+        <button class="back-btn" onclick="closeServicePage()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h4>RATH</h4>
+      </div>
+      <div class="service-content">
+        <div class="service-image">
+          <div class="carousel" id="rath-carousel">
+            <div class="carousel-images">
+              <img src="flower-rath.jpg" alt="Flower Rath" data-price="8000" data-name="Flower Rath">
+              <img src="Bahubali-rath.jpg" alt="Bahubali Rath" data-price="15000" data-name="Bahubali Rath">
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="service-details">
+          <div id="rath-details">
+            <h3 id="rath-name">Flower Rath</h3>
+            <p id="rath-desc">Beautifully decorated flower rath for weddings and processions.</p>
+          </div>
+          <div class="price-section">
+            <p class="price" id="rath-price">Price: ₹8,000 per day</p>
+            <div class="quantity-control single-unit">
+              <span class="single-note">(Single unit only)</span>
+              <input type="hidden" id="rath-qty" value="1">
+              <input type="hidden" id="rath-selected-price" value="8000">
+              <input type="hidden" id="rath-selected-name" value="Flower Rath">
+            </div>
+            <button class="btn-add-to-cart" onclick="addRathToCart()"><i class="fa-solid fa-cart-plus"></i> Add to Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BOOKING PAGE WITH COMPACT DATE/TIME INSIDE ===== -->
+  <div id="booking-page" class="booking-page">
+    <div class="booking-page-header">
+      <button class="back-btn" onclick="closeBookingPage()"><i class="fa-solid fa-arrow-left"></i></button>
+      <h4>YOUR BOOKING</h4>
+    </div>
+    <div class="booking-page-content">
+      <div class="booking-container">
+        <!-- एक ही box - items और date/time दोनों अंदर -->
+        <div id="booking-items" class="booking-items">
+          <p class="empty-booking">No items in your booking yet.</p>
+          
+          <!-- Compact date/time selector - box के अंदर ही -->
+          <div class="compact-datetime">
+            <div class="compact-date">
+              <i class="fa-regular fa-calendar"></i>
+              <input type="date" id="booking-date" class="compact-input">
+            </div>
+            <div class="compact-time">
+              <i class="fa-regular fa-clock"></i>
+              <input type="time" id="booking-time" class="compact-input" value="18:00">
+            </div>
+            <button class="compact-set" onclick="updateBookingDateTime()"><i class="fa-regular fa-floppy-disk"></i></button>
+          </div>
+          
+          <!-- Selected date/time display -->
+          <div class="compact-display" id="selected-datetime">
+            <i class="fa-regular fa-calendar"></i> Set date & time for your booking
+          </div>
+        </div>
+        
+        <!-- Booking Summary box -->
+        <div class="booking-total">
+          <h3>Booking Summary</h3>
+          <div class="total-details">
+            <p>Items: <span id="total-items">0</span></p>
+            <p class="total-price">Total: ₹<span id="total-amount">0</span></p>
+          </div>
+          <button class="btn btn-confirm" onclick="confirmBooking()"><i class="fa-solid fa-check"></i> Confirm Booking</button>
+          <button class="btn btn-clear" onclick="clearBooking()"><i class="fa-solid fa-trash"></i> Clear All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
